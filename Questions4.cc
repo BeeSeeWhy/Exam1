@@ -48,13 +48,42 @@ void wages(Employee roster[], int size) {
   for(i = 0; i < size; i++) {
     roster[i].weekly_wage = roster[i].hourly_rate * roster[i].hours_worked_per_week;
   }
-  
+}
+void swap(int &x, int &y){
+    x += y;
+    y = x - y;
+    x = x - y;
+
+}
+
+void printArray(Employee roster[], int size) {
+    for(int i = 0; i < size; i++) {
+      cout << roster[i].last_name = "Obama";
+      cout <<  roster[2].first_name = "Barack";
+        roster[2].id_number = 44;
+        roster[2].department = "President";
+        roster[2].hourly_rate = 155.25;
+        roster[2].hours_worked_per_week = 5;
+    }
+}
+
+void sortArray(Employee roster[], int size) {
+  for(int i = 0; i < length - 1; ++i) {
+    int minValue = i;
+    for(int j = i + 1; j < length; ++j) {
+        if( array[j] < array[minValue])
+            minValue = j;
+    }
+
+    swap(array[i], array[minValue]);
+    printArray(array);
+  }
 }
 int main () {
   const int ARRAY_SIZE = 3;
   Employee roster[ARRAY_SIZE];
 
   employees(roster);
-
+  wages(roster, ARRAY_SIZE);
   return 0;
 }
