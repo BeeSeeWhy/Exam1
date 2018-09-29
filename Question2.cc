@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+//find smallest number function
 int findSmallest (int arr[], int length) {
   int minValue;
   for (int i = 0; i < length - 1; i++) {
@@ -9,12 +10,24 @@ int findSmallest (int arr[], int length) {
         minValue = arr[i];
       else
         minValue = arr[j];
-        cout << minValue << endl;
     }
   }
   return minValue;
 }
 
+
+int findLargest (int arr[], int length) {
+  int maxValue;
+  for (int i = 0; i < length - 1; i++) {
+    for (int j = 1; j < length; j++) {
+      if(arr[i] > arr[j])
+        maxValue = arr[i];
+      else
+        maxValue = arr[j];
+    }
+  }
+  return maxValue;
+}
 int main () {
   int user_length = 0;
   int user_array[user_length];
@@ -40,6 +53,9 @@ int main () {
     cout << "Number " << j + 1 << " : " << user_array[j] << endl;
   }
   int smallest = findSmallest(user_array, user_length);
-  cout << "The smallest number is : " << smallest << '.'<< endl;
+  cout << "The smallest number is : " << smallest << '.' << endl;
+
+  int largest = findLargest(user_array, user_length);
+  cout << "The largest number is : " << largest << '.' << endl;
   return 0;
 }
